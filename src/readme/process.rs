@@ -38,7 +38,7 @@ impl Processor {
     pub fn new(indent_headings: bool) -> Self {
         Processor {
             section: Section::None,
-            indent_headings: indent_headings,
+            indent_headings,
             delimiter: None,
         }
     }
@@ -50,7 +50,7 @@ impl Processor {
         }
 
         // indent heading when outside code
-        if self.indent_headings && self.section == Section::None && line.starts_with("#") {
+        if self.indent_headings && self.section == Section::None && line.starts_with('#') {
             line.insert(0, '#');
         } else if self.section == Section::None {
             let l = line.clone();
