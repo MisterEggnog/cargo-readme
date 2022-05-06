@@ -79,10 +79,10 @@ fn main() {
 
     if let Some(m) = matches.subcommand_matches("readme") {
         if let Err(e) = execute(m) {
-                io::stderr()
-                    .write_fmt(format_args!("Error: {}\n", e))
-                    .expect("An error occurred while trying to show an error message");
-                std::process::exit(1);
+            io::stderr()
+                .write_fmt(format_args!("Error: {}\n", e))
+                .expect("An error occurred while trying to show an error message");
+            std::process::exit(1);
         }
     }
 }

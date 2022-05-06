@@ -54,10 +54,7 @@ impl Manifest {
                         .collect()
                 })
                 .unwrap_or_default(),
-            badges: cargo_toml
-                .badges
-                .map(process_badges)
-                .unwrap_or_default(),
+            badges: cargo_toml.badges.map(process_badges).unwrap_or_default(),
             version: cargo_toml.package.version,
         }
     }
