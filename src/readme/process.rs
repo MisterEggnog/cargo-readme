@@ -68,7 +68,7 @@ impl Processor {
             }
         } else if self.section != Section::None && Some(&line) == self.delimiter.as_ref() {
             self.section = Section::None;
-            line = self.delimiter.take().unwrap_or("```".to_owned());
+            line = self.delimiter.take().unwrap_or_else(|| "```".to_owned());
         }
 
         Some(line)
